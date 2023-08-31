@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter</title>
+    <!--font awsome kit-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- tailwind and daisyui cdn -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.3.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="bg-[#0d6efd] bg-opacity-10 h-[110vh]">
+      <nav class="w-10/12 mx-auto flex justify-between items-center py-14">
+        <div>
+          <p class="text-[#403f3f] text-2xl font-bold">Hot Gadgets</p>
+        </div>
+        <div>
+          <button
+            class="py-4 px-10 text-white bg-[#0d6efd] rounded-lg text-xl font-bold"
+          >
+            Sign Up
+          </button>
+        </div>
+      </nav>
+      <div
+        class="hero text-center flex flex-col justify-center items-center my-14"
+      >
+        <h1 class="text-[#100f0f] text-6xl font-bold">
+          Apple Iphone 13 Pro Max
+        </h1>
+
+        <p class="text-[#706f6f] text-lg font-normal mt-6 mb-8">
+          There are many variations of passages of Lorem Ipsum available, but
+          the majority have suffered alteration in some form, by injected humou.
+        </p>
+
+        <button
+          class="text-white text-xl font-bold bg-[#0d6efd] rounded-lg py-4 px-9"
+        >
+          Buy Now
+        </button>
+      </div>
+    </header>
+    <div class="flex justify-center">
+      <img
+        src="./images/pngwing 2.png"
+        alt=""
+        class="h-[430px] w-[250px] -mt-36"
+      />
+      <img
+        src="./images/0611efaecb97f0bfffb7db74148e725d.png"
+        alt=""
+        class="h-[585px] w-[290px] -mt-60"
+      />
+      <img
+        src="./images/pngwing 3.png"
+        alt=""
+        class="h-[430px] w-[250px] -mt-36"
+      />
+    </div>
+    <main>
+      <div class="mt-32 text-center mb-12">
+        <h1 class="text-[#100f0f] text-4xl font-semibold mb-8">
+          Search your phone
+        </h1>
+        <div class="flex justify-center">
+          <div class="form-control">
+            <div class="input-group">
+              <input
+                id="search-field"
+                type="text"
+                placeholder="Search your phone"
+                class="input input-bordered"
+              />
+              <button class="btn btn-primary" id="search-button">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal-->
+      <!-- Open the modal using ID.showModal() method -->
+      <div>
+        <dialog id="my_modal_1" class="modal">
+          <form method="dialog" class="modal-box">
+            <div id="modal-container"></div>
+            
+          </form>
+        </dialog>
+      </div>
+
+      <!-- spinner -->
+      <div id="spinner" class="text-center hidden">
+        <span class="loading loading-spinner loading-lg"></span>
+      </div>
+      <!-- display javascript content -->
+      <div
+        id="card-showcase"
+        class="w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-5 '"
+      ></div>
+      <div class="text-center mt-12 mb-32">
+        <button
+          id="show-all-button"
+          class="rounded-lg bg-[#0d6efd] text-white text-xl font-bold px-9 py-4 text-center hidden"
+          onclick="showAll()"
+        >
+          Show All
+        </button>
+      </div>
+    </main>
+    <footer class="mt-32 bg-[#0d6efd] bg-opacity-10">
+      <div class="w-10/12 mx-auto">
+        <div class="upper flex justify-between items-center pt-32 pb-24">
+          <div>
+            <h1 class="text-[#100f0f] text-5xl font-bold mb-3">Hot Gadgets</h1>
+            <p class="text-[#706f6f] text-lg font-semibold">
+              You can definitely work.
+            </p>
+          </div>
+          <div class="flex justify-center items-center gap-5">
+            <div class="text-2xl">
+              <i class="fa-brands fa-facebook" style="color: #035efc"></i>
+              <i class="fa-brands fa-twitter mx-5" style="color: #a5c3f8"></i>
+              <i class="fa-brands fa-instagram" style="color: #574587"></i>
+            </div>
+            <button
+              class="text-white rounded-lg text-xl font-bold py-4 px-5 bg-[#0d6efd]"
+            >
+              Join Premium
+            </button>
+          </div>
+        </div>
+        <div>
+          <footer
+            class="flex justify-between items-center text-[#403f3f] text-xl font-medium pb-32"
+          >
+            <div class="flex flex-col justify-center items-start gap-3">
+              <a class="link link-hover">Product</a>
+              <a class="link link-hover">Browse Jobs</a>
+              <a class="link link-hover">Remote Jobs</a>
+              <a class="link link-hover">Startup Jobs</a>
+              <a class="link link-hover">Company Jobs</a>
+            </div>
+            <div class="flex flex-col justify-center items-start gap-3">
+              <a class="link link-hover">Popular</a>
+              <a class="link link-hover">UIUX Design</a>
+              <a class="link link-hover">Product Design</a>
+              <a class="link link-hover">Back-End Developer</a>
+              <a class="link link-hover">Front-End Developer</a>
+            </div>
+            <div class="flex flex-col justify-center items-start gap-3">
+              <a class="link link-hover">Resource</a>
+              <a class="link link-hover">Faq</a>
+              <a class="link link-hover">Support</a>
+              <a class="link link-hover">Privacy Policy</a>
+              <a class="link link-hover">Terms of Service</a>
+            </div>
+            <div class="flex flex-col justify-center items-start gap-3">
+              <a class="link link-hover">Company</a>
+              <a class="link link-hover">About Us</a>
+              <a class="link link-hover">Contact Us</a>
+              <a class="link link-hover">Career Tips</a>
+              <a class="link link-hover">Careers</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
